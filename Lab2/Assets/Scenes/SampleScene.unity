@@ -207,6 +207,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &527961419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 527961420}
+  m_Layer: 0
+  m_Name: groundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &527961420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527961419}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0015, y: -0.0802, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1451672310}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &542125484
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +249,7 @@ GameObject:
   - component: {fileID: 542125487}
   - component: {fileID: 542125486}
   - component: {fileID: 542125485}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain Sliced (16x16)_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +322,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -408076012, guid: df2de7daa0ec1af42b70b77ca0abf2a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -311,7 +342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542125484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4462, y: -4.1487, z: 0}
+  m_LocalPosition: {x: -8.41, y: -3.08, z: 0}
   m_LocalScale: {x: 3.6621737, y: 4.83158, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -413,7 +444,7 @@ GameObject:
   - component: {fileID: 1128698689}
   - component: {fileID: 1128698688}
   - component: {fileID: 1128698687}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +517,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 70c9167dd5a31834881631ea415ed235, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -506,7 +537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128698686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5942, y: -3.7681, z: 0}
+  m_LocalPosition: {x: 1.63, y: -2.7, z: 0}
   m_LocalScale: {x: 13.529347, y: 1.2585716, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,7 +621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305621050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3313, y: 3.36, z: 0}
+  m_LocalPosition: {x: 0.18, y: -0.25, z: 0}
   m_LocalScale: {x: 5.049516, y: 1.937181, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -609,6 +640,7 @@ GameObject:
   - component: {fileID: 1451672309}
   - component: {fileID: 1451672308}
   - component: {fileID: 1451672307}
+  - component: {fileID: 1451672311}
   m_Layer: 0
   m_Name: Player_3
   m_TagString: Untagged
@@ -631,12 +663,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1451672308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -723,13 +755,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451672306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.12, y: 0.7, z: 0}
+  m_LocalPosition: {x: -8.29, y: -0.62, z: 0}
   m_LocalScale: {x: 7.985634, y: 7.7462516, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 527961420}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451672311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451672306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c3c438bf289624b965f78781b57d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  jumpHeight: 7
+  Spacebar: 32
+  L: 276
+  R: 275
+  groundCheck: {fileID: 527961420}
+  groundCheckRadius: 0.4
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &2081313420
 GameObject:
   m_ObjectHideFlags: 0
