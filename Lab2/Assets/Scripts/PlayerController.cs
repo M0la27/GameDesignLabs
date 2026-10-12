@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,9 +18,11 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
 
     private bool grounded;        // Is the character standing on solid ground?
+    private Animator anim;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity =
                 new Vector2(
-                    -moveSpeed,
+                    moveSpeed,
                     GetComponent<Rigidbody2D>().velocity.y
                 );
 
@@ -64,6 +65,9 @@ public class PlayerController : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipX = false;
             }
         }
+        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+        anim.SetBool("Grounded", grounded);
     }
 
     // Jump function
